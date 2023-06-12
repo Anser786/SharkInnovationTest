@@ -9,13 +9,13 @@ import {
   Alert,
 } from "react-native";
 import { Auth } from "../MyContext";
-
+import { useNavigation } from "@react-navigation/native";
 const SignUp = () => {
   const { storeUsers, users, storeUser, getUsers } = useContext(Auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+  const { navigate } = useNavigation()
   const onSignUp = async () => {
     if (!email || !password || !confirmPassword) {
       Alert.alert("Please fil all fields");
@@ -56,7 +56,7 @@ const SignUp = () => {
       <Button title="SignUp" onPress={onSignUp} />
       <TouchableOpacity
         style={{ marginTop: 30 }}
-        onPress={() => navigate("SignUpScreen")}
+        onPress={() => navigate("LoginScreen")}
       >
         <Text>Login</Text>
       </TouchableOpacity>

@@ -12,9 +12,9 @@ import { Auth } from "../MyContext";
 
 const SignUp = () => {
   const { storeUsers, users, storeUser, getUsers } = useContext(Auth);
-  const [email, setEmail] = useState("ansernawaz786@gmail.com");
-  const [password, setPassword] = useState("123456");
-  const [confirmPassword, setConfirmPassword] = useState("123456");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const onSignUp = async () => {
     if (!email || !password || !confirmPassword) {
